@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npm run docker:up:*)",
+      "Bash(npm run format:*)",
+      "Bash(npm run build:*)",
+      "Read(//Users/aleksandarlozanovski/.docker/**)",
+      "Bash(docker logs:*)",
+      "Bash(docker rm:*)",
+      "Bash(npm run dev:*)",
+      "Bash(curl:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
