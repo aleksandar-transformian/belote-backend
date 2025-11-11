@@ -99,6 +99,9 @@ async function startServer() {
   }
 }
 
-startServer();
+// Only start the server if this file is run directly (not imported)
+if (require.main === module) {
+  startServer();
+}
 
 export { app, server, io };
