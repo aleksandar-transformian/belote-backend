@@ -9,7 +9,16 @@
       "Bash(docker logs:*)",
       "Bash(docker rm:*)",
       "Bash(npm run dev:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(git push:*)",
+      "Bash(git credential-cache:*)",
+      "Bash(git credential-osxkeychain:*)",
+      "Bash(git remote set-url:*)",
+      "Read(//Users/aleksandarlozanovski/**)",
+      "Bash(git config:*)",
+      "Bash(printf:*)",
+      "Bash(security delete-internet-password:*)",
+      "Bash(security find-internet-password:*)"
     ],
     "deny": [],
     "ask": []
