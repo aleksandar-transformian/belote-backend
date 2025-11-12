@@ -10,6 +10,7 @@ import { testConnection } from '@infrastructure/database/connection';
 import { Container } from '@infrastructure/container/Container';
 import { createAuthRoutes } from '@presentation/routes/authRoutes';
 import { createUserRoutes } from '@presentation/routes/userRoutes';
+import { GameSocketHandler } from '@presentation/socket-handlers/GameSocketHandler';
 
 const app = express();
 const server = http.createServer(app);
@@ -56,13 +57,11 @@ app.get(API_PREFIX, (req, res) => {
 app.use(`${API_PREFIX}/auth`, createAuthRoutes(container.authController));
 app.use(`${API_PREFIX}/users`, createUserRoutes(container.userController));
 
-// Socket.io connection
-io.on('connection', socket => {
-  logger.info('Client connected', { socketId: socket.id });
+// Socket.io initialization
+const gameSocketHandler = new GameSocketHandler(io);
 
-  socket.on('disconnect', () => {
-    logger.info('Client disconnected', { socketId: socket.id });
-  });
+io.on('connection', (socket) => {
+  gameSocketHandler.handleConnection(socket as any);
 });
 
 // 404 handler
