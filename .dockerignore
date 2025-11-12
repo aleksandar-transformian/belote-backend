@@ -1,7 +1,50 @@
+# Dependencies
 node_modules
+npm-debug.log
+yarn.error.log
+
+# Build outputs
 dist
-.git
+*.tsbuildinfo
+
+# Development
 .env
+.env.local
+.env.development
 *.log
+
+# Git
+.git
+.gitignore
+.github
+
+# Documentation
+*.md
+docs
+
+# Tests
+tests
 coverage
+*.test.ts
+*.spec.ts
+jest.config.js
+jest.setup.ts
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
 .DS_Store
+Thumbs.db
+
+# CI/CD (don't copy into image)
+.github/workflows
+
+# Docker
+Dockerfile*
+docker-compose*.yml
+.dockerignore
